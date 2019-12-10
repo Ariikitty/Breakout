@@ -1,0 +1,12 @@
+C:\Users\Stephen\Documents\Coding\College\Breakout\bin\Debug\Breakout.exe.config
+C:\Users\Stephen\Documents\Coding\College\Breakout\bin\Debug\Breakout.exe
+C:\Users\Stephen\Documents\Coding\College\Breakout\bin\Debug\Breakout.pdb
+C:\Users\Stephen\Documents\Coding\College\Breakout\bin\Debug\Breakout.xml
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.vbprojAssemblyReference.cache
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.Breakout.resources
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.Resources.resources
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.vbproj.GenerateResource.cache
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.vbproj.CoreCompileInputs.cache
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.exe
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.xml
+C:\Users\Stephen\Documents\Coding\College\Breakout\obj\Debug\Breakout.pdb

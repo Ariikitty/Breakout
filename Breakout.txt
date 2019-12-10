@@ -1,0 +1,71 @@
+﻿Public Class Breakout
+    Private intDx As Integer = 4
+    Private intDy As Integer = -3
+    ' creates an arry of pictureboxes
+    Const Maxbricks As Integer = 13
+    Private pbxBricks(Maxbricks + 1) As PictureBox
+    Private Sub TmrGame_Tick(sender As Object, e As EventArgs) Handles TmrGame.Tick
+        Call MoveBall()
+        Call CollisionBallBat()
+        Call CollisionBallBricks()
+        pbxBat.Top = Me.Height - 100
+    End Sub
+    Private Sub MoveBall()
+        pbxBall.Left += intDx
+        pbxBall.Top += intDy
+        ' ball bounces off the top
+        If pbxBall.Top < 0 Then
+            intDy = -intDy
+        End If
+        ' ball bounces off the left
+        If pbxBall.Left < 0 Then
+            intDx = -intDx
+        End If
+        If pbxBall.Right > Me.Width - 20 Then
+            intDx = -intDx
+        End If
+        If pbxBall.Bottom > Me.Height - 40 Then
+            intDy = -intDy
+        End If
+    End Sub
+    Private Sub Breakout_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+        pbxBat.Left = e.X
+    End Sub
+    Private Sub CollisionBallBat()
+        If pbxBall.Bounds.IntersectsWith(pbxBat.Bounds) Then
+            intDy = -intDy
+            ' different between cnetre of the bat and the ball is X speed
+            Dim intcenterbat As Integer = pbxBat.Left + pbxBat.Width / 2
+            Dim intcenterball As Integer = pbxBall.Left + pbxBall.Width / 2
+            Dim intDiff As Integer = intcenterball - intcenterbat
+            intDx = intDiff
+        End If
+    End Sub
+    Private Sub Breakout_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pbxBricks(0) = PictureBox1
+        pbxBricks(1) = PictureBox2
+        pbxBricks(2) = PictureBox3
+        pbxBricks(3) = PictureBox4
+        pbxBricks(4) = PictureBox5
+        pbxBricks(5) = PictureBox6
+        pbxBricks(6) = PictureBox7
+        pbxBricks(7) = PictureBox8
+        pbxBricks(8) = PictureBox9
+        pbxBricks(9) = PictureBox10
+        pbxBricks(10) = PictureBox11
+        pbxBricks(11) = PictureBox12
+        pbxBricks(12) = PictureBox13
+        pbxBricks(13) = PictureBox14
+    End Sub
+    Private Sub CollisionBallBricks()
+        Dim i As Integer
+        For i = 0 To Maxbricks
+            If pbxBall.Bounds.IntersectsWith(pbxBricks(i).Bounds) Then
+                If pbxBricks(i).Visible = True Then
+                    pbxBricks(i).Visible = False
+                    intDy = -intDy
+                End If
+            End If
+        Next
+    End Sub
+End Class
